@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block main %}
+{% if username == "Shun" %}
+<h1>自分です。</h1>
+{% elif username %}
+<h1>{{ username }}さん、ようこそ！陸上長距離サイトです。</h1>
+{% else %}
+<h1>みなさん、ようこそ！陸上長距離サイトです。</h1>
+{% endif %}
+<a href="{% url 'hakone9397' %}">・箱根駅伝クイズ（2017(93回)〜2021(97回)）</a>
+<a href="{% url 'hakone8892' %}">・箱根駅伝クイズ（2012(88回)〜2016(92回)）</a>
+
+<img src="{% static 'welcome.jpg' %}" />
+{% endblock %}
